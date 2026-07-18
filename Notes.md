@@ -51,4 +51,12 @@
 
 1. In *render.com*, deployed the project.
 
+== BACKEND ==
+
+1. Normally, if the user does not visit the project on *render.com* for 15 minutes, the deployment got shut down. If the user wants to visit it again, deployment might take a couple minutes. To prevent it, we will send signals within the deployment server to 'health' endpoint so the server will stay awake. Therefore, changed 'FRONTEND_URL' in *render.com* dashboard to the exact render.com url path of the project.
+
+2. Executed *npm i cron*.
+
+3. Created *src/libs/cron.js* and filled it. Then registered it in *src/index.js* inside *app.listen* method. Check if the environment is production, start that cron job.
+
 . We will use *webhooks*. When the user registers, it should notify mongodb with notifications like "user.created", "user.updated", "user.deleted". Handle this in clerk project dashboard. Go to *Configure tab*. Then in sidebar, *Developers*>*Webhooks* and click on *Add Endpoint* button.

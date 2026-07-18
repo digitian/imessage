@@ -15,4 +15,14 @@
 
 6. Created *.env* file in root. Then imported *"dotenv/config"* package in index.js.
 
-7. Used mongodb for database, clerk for authentication, imagekit.io for image uploads
+7. Used mongodb for database, clerk for authentication, imagekit.io for image uploads. Got all of the api keys into *.env*.
+
+8. In *src/models*, created *user.model.js* and *message.model.js*.
+
+9. Had a problem with connecting to MongoDB. Hardcoded dns setting fixed it (I found it out).
+
+10. Executed *npm install @clerk/express* to use clerk authentication middleware. You can check the installation doc in clerk website to add the middleware easily.
+
+11. In *index.js*, added *app.use(express.json());* to parse client side json.
+
+12. In *index.js*, added *app.use(express.json());*. This is good for development environment, not for production. Because it allows all of the addresses to interact with the backend. Therefore, we modified it to *app.use(cors({ origin: FRONTEND_URL, credentials: true }));* and added FRONTEND_URL param to *.env* for safety. This address will be changed in production.

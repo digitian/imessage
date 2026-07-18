@@ -26,3 +26,15 @@
 11. In *index.js*, added *app.use(express.json());* to parse client side json.
 
 12. In *index.js*, added *app.use(express.json());*. This is good for development environment, not for production. Because it allows all of the addresses to interact with the backend. Therefore, we modified it to *app.use(cors({ origin: FRONTEND_URL, credentials: true }));* and added FRONTEND_URL param to *.env* for safety. This address will be changed in production.
+
+== FRONTEND ==
+
+1. Executed *npm install @clerk/react* to get clerk ui blocks for authentication.
+
+2. Created .env file in root and copy pasted VITE_CLERK_PUBLISHABLE_KEY
+
+3. As it shows in the clerk's documentation, modified *src/index.jsx* and used *<ClerkProvider>* elements as parent of *<App />* element.
+
+4. Modified *srx/App.jsx* and copy pasted the auth ui elements from clerk docs to there.
+
+5. Now we will use *webhooks*. When the user registers, it should notify mongodb with notifications like "user.created", "user.updated", "user.deleted". Handle this in clerk project dashboard. Go to *Configure tab*. Then in sidebar, *Developers*>*Webhooks* and click on *Add Endpoint* button.

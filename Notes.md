@@ -37,4 +37,12 @@
 
 4. Modified *srx/App.jsx* and copy pasted the auth ui elements from clerk docs to there.
 
-5. Now we will use *webhooks*. When the user registers, it should notify mongodb with notifications like "user.created", "user.updated", "user.deleted". Handle this in clerk project dashboard. Go to *Configure tab*. Then in sidebar, *Developers*>*Webhooks* and click on *Add Endpoint* button.
+== MAIN ==
+
+1. To handle the monolith approach at the best level, we will use Docker. Therefore, created *Dockerfile* and *.dockerignore* files in main root directory and filled it.
+
+== BACKEND ==
+
+1. Implemented filesystem and path in *src/index.js* to serve the static files (for frontend) in production. So, when the request comes in from the user, api urls will be handled by express routes, the rest will be handled by the frontend side (it will return index.html).
+
+. We will use *webhooks*. When the user registers, it should notify mongodb with notifications like "user.created", "user.updated", "user.deleted". Handle this in clerk project dashboard. Go to *Configure tab*. Then in sidebar, *Developers*>*Webhooks* and click on *Add Endpoint* button.

@@ -45,4 +45,10 @@
 
 1. Implemented filesystem and path in *src/index.js* to serve the static files (for frontend) in production. So, when the request comes in from the user, api urls will be handled by express routes, the rest will be handled by the frontend side (it will return index.html).
 
+2. In *package.json*, added *"build": "rm -rf dist && cp -R src dist"* and *"start": "node src/index.js"* under *"scripts"* for the production.
+
+== MAIN ==
+
+1. In *render.com*, deployed the project.
+
 . We will use *webhooks*. When the user registers, it should notify mongodb with notifications like "user.created", "user.updated", "user.deleted". Handle this in clerk project dashboard. Go to *Configure tab*. Then in sidebar, *Developers*>*Webhooks* and click on *Add Endpoint* button.

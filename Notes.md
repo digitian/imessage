@@ -59,4 +59,14 @@
 
 3. Created *src/libs/cron.js* and filled it. Then registered it in *src/index.js* inside *app.listen* method. Check if the environment is production, start that cron job.
 
-. We will use *webhooks*. When the user registers, it should notify mongodb with notifications like "user.created", "user.updated", "user.deleted". Handle this in clerk project dashboard. Go to *Configure tab*. Then in sidebar, *Developers*>*Webhooks* and click on *Add Endpoint* button.
+== MAIN ==
+
+1. We will use *webhooks*. When the user registers, it should notify mongodb with notifications like "user.created", "user.updated", "user.deleted". Handle this in clerk project dashboard. Go to *Configure tab*. Then in sidebar, *Developers*>*Webhooks* and click on *Add Endpoint* button. Add the endpoint *websitename.com/api/webhooks/clerk*, which we will include in the backend, then select all of the notifications under *user*, then create it.
+
+2. After creating the endpoint, copy the *Signing secret*. This is to resolve the identity of the sender.
+
+3. Registered *CLERK_WEBHOOK_SIGNING_SECRET* key in *render.com*.
+
+4. Implemented the webhook in *src/index.js*.
+
+5. Created *src/webhooks/clerk.webhook.js* and filled it.

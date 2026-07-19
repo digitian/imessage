@@ -8,7 +8,8 @@ import path from "path";
 import "dotenv/config";
 
 import { connectDB } from "./lib/db.js";
-import { clerkMiddleware, clerkWebHook } from '@clerk/express'
+import clerkMiddleware from '@clerk/express'
+import clerkWebHook from './webhooks/clerk.webhook.js';
 import job from './lib/cron.js';
 
 const app = express();

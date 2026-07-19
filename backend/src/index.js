@@ -8,6 +8,7 @@ import path from "path";
 import "dotenv/config";
 
 import { connectDB } from "./lib/db.js";
+import { clerkMiddleware } from "@clerk/express";
 import clerkWebHook from './webhooks/clerk.webhook.js';
 import job from './lib/cron.js';
 
@@ -23,7 +24,7 @@ app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }), clerkW
 
 app.use(express.json());
 app.use(cors({ origin: FRONTEND_URL, credentials: true }));
-app.use(clerkMiddleware())
+app.use(clerkMiddleware());
 
 app.get("/health", (req, res) => {
     res.status(200).json({ ok: true });

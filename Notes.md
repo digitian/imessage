@@ -77,3 +77,10 @@
 
 2. To protect authenticated routes, created *src/middleware/auth.middleware.js*. Inside that, *protectRoute* function defined. *'next'* parameter will be called if the user pass the auth check, which is going to call the auth controller.
 
+3. Executed *npm install @imagekit/nodejs*. Then created *src/lib/imagekit.js*.
+
+4. Created *src/middlweare/upload.middleware.js*. We need a package to parse the uploaded files (multipart/form-data) so executed *npm install multer*. Express's normal body parser can't read the files. *express.json()*: only understands json; *express.urlencoded()* only understands simple text fields, not files. So without multer, *req.body* for a file upload would be just a garbage/empty. *Multer* is the translator that decodes the multipart blob into something usable. It makes *req.file* ready to use.
+
+5. Created the message route and message controller. In controller defined *getUsersForSidebar* method to get all of the users except the self.
+
+6. Using the middleware in each defined route is not a good practice. Use *app.use(middlewarename)* before the routes so it will be applied to all of the routes in the file.

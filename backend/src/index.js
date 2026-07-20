@@ -13,6 +13,7 @@ import job from './lib/cron.js';
 
 import clerkWebHook from './webhooks/clerk.webhook.js';
 import authRoutes from './routes/auth.route.js';
+import messageRoutes from './routes/message.route.js';
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 // If the public directory exists, serve the static files from it. This is useful for serving the frontend build in production.
 // This is for the production build

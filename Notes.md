@@ -84,3 +84,15 @@
 5. Created the message route and message controller. In controller defined *getUsersForSidebar* method to get all of the users except the self.
 
 6. Using the middleware in each defined route is not a good practice. Use *app.use(middlewarename)* before the routes so it will be applied to all of the routes in the file.
+
+== NOTE ==
+
+- To use socket.io, in backend, execute *npm install socket.io*. In frontend (react), *npm install socket.io-client*.
+
+- Socket.io is listening for events (both in backend and frontend).
+
+- To listen for events: *socket.on()*
+
+== BACKEND ==
+
+1. Created *src/libs/socket.js* file. Then, changed the *app.listen* method in *src/index.js* to *server.listen* by importing the server argument from the *socket.js* file. This server now will listen both express app and socket in the same port.

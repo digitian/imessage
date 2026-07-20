@@ -70,3 +70,10 @@
 4. Implemented the webhook in *src/index.js*.
 
 5. Created *src/webhooks/clerk.webhook.js* and filled it.
+
+== BACKEND ==
+
+1. Created *src/routes/auth.route.js* and *src/controllers/auth.controller.js*. Imported the route file in *src/index.js*.
+
+2. To protect authenticated routes, created *src/middleware/auth.middleware.js*. Inside that, *protectRoute* function defined. *'next'* parameter will be called if the user pass the auth check, which is going to call the auth controller.
+

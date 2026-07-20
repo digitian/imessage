@@ -9,8 +9,10 @@ import "dotenv/config";
 
 import { connectDB } from "./lib/db.js";
 import { clerkMiddleware } from "@clerk/express";
-import clerkWebHook from './webhooks/clerk.webhook.js';
 import job from './lib/cron.js';
+
+import clerkWebHook from './webhooks/clerk.webhook.js';
+import authRoutes from './routes/auth.route.js';
 
 const app = express();
 
@@ -29,6 +31,8 @@ app.use(clerkMiddleware());
 app.get("/health", (req, res) => {
     res.status(200).json({ ok: true });
 });
+
+app.use("/api/auth", authRoutes);
 
 // If the public directory exists, serve the static files from it. This is useful for serving the frontend build in production.
 // This is for the production build

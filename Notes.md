@@ -105,4 +105,4 @@
 
 3. Installed extension *ES7+ React/Redux/React-Native snippets*. Then created *src/pages/ChatPage.jsx* and typed *rfce*. It has automatically created the base code of the page component (like typing '!' in html and it brings the base html code).
 
-4. 
+4. *https://21st.dev/* contains thousands of ready-to-use react components.

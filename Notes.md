@@ -96,3 +96,13 @@
 == BACKEND ==
 
 1. Created *src/libs/socket.js* file. Then, changed the *app.listen* method in *src/index.js* to *server.listen* by importing the server argument from the *socket.js* file. This server now will listen both express app and socket in the same port.
+
+== FRONTEND ==
+
+1. Executed *npm install react-router*.
+
+2. Modified *src/main.jsx*. Imported *BrowserRouter* and wrapped the *<App />* element with *<BrowserRouter>* element
+
+3. Installed extension *ES7+ React/Redux/React-Native snippets*. Then created *src/pages/ChatPage.jsx* and typed *rfce*. It has automatically created the base code of the page component (like typing '!' in html and it brings the base html code).
+
+4. 

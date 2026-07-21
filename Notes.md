@@ -106,3 +106,7 @@
 3. Installed extension *ES7+ React/Redux/React-Native snippets*. Then created *src/pages/ChatPage.jsx* and typed *rfce*. It has automatically created the base code of the page component (like typing '!' in html and it brings the base html code).
 
 4. *https://21st.dev/* contains thousands of ready-to-use react components.
+
+5. We will use axios for api requests. Zustand for state managements (like pinia in vue.js)
+
+6. *react-hot-toast* library for toast notifications.

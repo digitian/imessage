@@ -14,10 +14,10 @@ const messageSchema = new mongoose.Schema({
     text: {
         type: String,
     },
-    text: {
+    image: {
         type: String,
     },
-    text: {
+    video: {
         type: String,
     },
 }, { timestamps: true }); // createdAt & updatedAt

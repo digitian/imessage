@@ -3,7 +3,6 @@ import AuthHeader from "../components/auth/AuthHeader";
 import AuthHeroPanel from "../components/auth/AuthHeroPanel";
 import { useWallpaper } from "../context/wallpaper";
 
-
 function AuthPage() {
   const { frameStyle } = useWallpaper();
 
